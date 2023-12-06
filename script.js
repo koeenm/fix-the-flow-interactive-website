@@ -1,11 +1,14 @@
-const hulpKnop = document.getElementById('hulpknop');
-const closeBtn = document.getElementById('close')
+const helpBtn = document.getElementById('help-button');
+const closeBtn = document.getElementById('close');
 
-const stappenPlan = document.getElementById('stappenplan')
+const nextBtn = document.getElementById('next');
+const backBtn = document.getElementById('back')
+
+const stepGuide = document.getElementById('step-guide')
 const dialog = document.querySelector("dialog");
 
 
-hulpknop.addEventListener("click", function() {
+helpBtn.addEventListener("click", function() {
     dialog.showModal();
   });
 

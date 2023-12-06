@@ -45,25 +45,25 @@
         align-items: center;
         padding: 0.5em 1em;
 
-    & .hulpknop img {
+    & .help-button img {
         max-width: 5vw;
     }
 
-    & .hulpknop {
+    & .help-button {
         color: var(--tertiaire-color);
     }
 
-    & .hulpknop figcaption {
+    & .help-button figcaption {
         text-align: center;
         font-size: 0.5em;
     }
 
-    & .hulpknop:hover {
+    & .help-button:hover {
         color: var(--primary-color);
         cursor: pointer;
     }
 
-    & .hulpknop::after {
+    & .help-button::after {
         content: "";
         width: 0%;
         height: 2px;
@@ -74,7 +74,7 @@
         transition: 200ms;
     }
 
-    & .hulpknop:hover::after {
+    & .help-button:hover::after {
         width: 100%;
     }
 
@@ -121,9 +121,13 @@
     background-color: black;
     opacity: 0.5;
 }
+
+.step-guide::before {
+    opacity: 0;
+}
   
-.stappenplan {
-    margin: 5em auto;
+.step-guide {
+    margin: 25vh auto;
     width: 75vw;
     height: 60vh;
     border: 0.15em solid black;
@@ -135,15 +139,18 @@
     "linksboven . rechtsboven"
     ". midden rechtsmidden"
     ". middenonder.";
-    grid-template-columns: 15vw 40vw 15vw;
+    grid-template-columns: 10vw 55vw 10vw;
+    grid-template-rows: 10vh 40vh 10vh;
     align-items: center;
     text-align: center;
+
+    overflow: hidden;
 
     h2 {
         grid-area: linksboven;
     }
 
-    .sluiten {
+    .close {
         grid-area: rechtsboven;
     }
 
@@ -151,11 +158,11 @@
         grid-area: midden;
     }
 
-    .volgendestap {
+    .next-step {
         grid-area: rechtsmidden;
     }
 
-    .volgorde {
+    .numbered-nav {
         grid-area: middenonder;
     }
 
@@ -190,7 +197,7 @@
         font-size: 2em;
     }
 
-    .hulpknop {
+    .help-button {
         scale: 1.2;
     }
 
@@ -206,10 +213,35 @@
         text-align: center;
         font-size: 1.2em;
     }
+
+    .step-guide {
+
+        grid-template-columns: 10vw 50vw 15vw ;
+        
+        & img {
+            max-width: 2em;
+        }
+
+        h2 {
+            padding-left: 1em;
+        }
+
+        button {
+            padding-left: 0;
+        }
+
+        span {
+            font-size: 0.75em;
+        }
+
+        .numbered-nav {
+            font-size: 0.75em;
+        }
+    }
 }
 
   @media (min-width: 630px) {
-    .hulpknop {
+    .help-button {
         font-size: 2em;
     }
 
@@ -219,6 +251,13 @@
 
     header .hamburger-menu {
         display: none;
+    }
+
+    .step-guide {
+        
+        & h2 {
+            font-size: 2em;
+        }
     }
   }
 
@@ -264,7 +303,7 @@
   }
 
   @media (min-width: 1200px) {
-    .hulpknop img {
+    .help-button img {
         width: 3vw;
     }
 
@@ -278,6 +317,22 @@
 
     main blockquote h2 {
         font-size: 5em;
+    }
+
+    .step-guide {
+
+        & h2 {
+            font-size: 4em;
+            padding-top: 1.2em;
+        }
+
+        p {
+            font-size: 2em;
+        }
+
+        button {
+            padding-left: 4em;
+        }
     }
   }
 
