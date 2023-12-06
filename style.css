@@ -1,0 +1,217 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --primary-color: #46aa64;
+    --secondary-color: #0a3250;
+    --tertiaire-color: #ffffff;
+    --main-font: "AvantGardeGothicMedium";
+  }
+  
+  @font-face {
+    font-family: "AvantGardeGothicMedium";
+    src: url(./Fonts/ITC\ Avant\ Garde\ Gothic\ Medium.otf);
+  }
+
+  body {
+    font-family: var(--main-font);
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  a {
+    all: unset;
+  }
+
+  header {
+        display: flex;
+        background: var(--secondary-color);
+        color: var(--tertiaire-color);
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.5em 1em;
+
+    & .hulpknop img {
+        max-width: 5vw;
+    }
+
+    & .hulpknop figcaption {
+        text-align: center;
+        font-size: 0.5em;
+    }
+
+    & .hulpknop:hover {
+        color: var(--primary-color);
+        cursor: pointer;
+    }
+
+    & .hulpknop::after {
+        content: "";
+        width: 0%;
+        height: 2px;
+        background: var(--primary-color);
+        border-radius: 5em;
+        display: block;
+        margin: auto;
+        transition: 200ms;
+    }
+
+    & .hulpknop:hover::after {
+        width: 100%;
+    }
+
+    & h1 {
+        text-transform: uppercase;
+    }
+    
+    & h1 span {
+        color: var(--primary-color);
+    }
+
+    & .hamburger-menu img {
+        max-width: 10vw;
+    }
+
+    ul {
+        display: flex;
+        gap: 2em;
+    }
+
+    ul li a:hover {
+        color: var(--primary-color);
+        cursor: pointer;
+    }
+
+    & ul li a::after {
+        content: "";
+        width: 0%;
+        height: 2px;
+        background: var(--primary-color);
+        border-radius: 5em;
+        display: block;
+        margin: auto;
+        transition: 200ms;
+    }
+
+    & ul li a:hover::after {
+        width: 100%;
+      }
+  }
+
+  @media (max-width: 630px) {
+    header ul {
+        display: none;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    .front-content {
+        min-height: 50vh;
+    }
+
+    .front-content img {
+        display: none;
+    }
+
+    .front-content blockquote {
+        text-align: center;
+        font-size: 1.2em;
+    }
+}
+
+  @media (min-width: 630px) {
+    .hulpknop {
+        font-size: 2em;
+    }
+
+    header {
+        padding: 1em 2em;
+    }
+
+    header .hamburger-menu {
+        display: none;
+    }
+  }
+
+  main {
+
+    & .front-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1em;
+        gap: 1em;
+    }
+
+    & .front-content img {
+        max-width: 50vw;
+        border-radius: 2em;
+    }
+
+    blockquote {
+        display: flex;
+        padding: 1em;
+    }
+
+    blockquote h2 {
+        font-size: 3em;
+        color: var(--primary-color);
+        min-width: 40vw;
+    }
+
+    blockquote h2 span {
+        color: black;
+    }
+  }  
+
+  @media (min-width: 800px) {
+    main blockquote h2 {
+        font-size: 4em;
+    }
+
+    h1 {
+        font-size: 2.5em;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .hulpknop img {
+        width: 3vw;
+    }
+
+    h1 {
+        font-size: 3.5em;
+    }
+
+    .front-content img {
+        width: 35vw;
+    }
+
+    main blockquote h2 {
+        font-size: 5em;
+    }
+  }
+
+  .marketplace {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 1em;
+    box-shadow: 0 -0.2rem 0.4rem -0.1rem rgba(140, 161, 174, 0.5);  
+  }
+
+
+
+
+  
+
+
+
+
+  
