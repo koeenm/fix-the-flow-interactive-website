@@ -28,6 +28,11 @@
     all: unset;
   }
 
+  button {
+    background: transparent;
+    border: none;
+  }
+
   header {
         display: flex;
         background: var(--secondary-color);
@@ -38,6 +43,10 @@
 
     & .hulpknop img {
         max-width: 5vw;
+    }
+
+    & .hulpknop {
+        color: var(--tertiaire-color);
     }
 
     & .hulpknop figcaption {
@@ -110,6 +119,10 @@
 
     h1 {
         font-size: 2em;
+    }
+
+    .hulpknop {
+        scale: 1.2;
     }
 
     .front-content {
