@@ -33,6 +33,10 @@
     border: none;
   }
 
+  button:hover {
+    cursor: pointer;
+  }
+
   header {
         display: flex;
         background: var(--secondary-color);
@@ -111,6 +115,71 @@
         width: 100%;
       }
   }
+
+/* Begin stappenplan pop up */
+::backdrop {
+    background-color: black;
+    opacity: 0.5;
+}
+  
+.stappenplan {
+    margin: 5em auto;
+    width: 75vw;
+    height: 60vh;
+    border: 0.15em solid black;
+
+    opacity: 1;
+    transition-duration: 0.3s;
+
+    grid-template-areas: 
+    "linksboven . rechtsboven"
+    ". midden rechtsmidden"
+    ". middenonder.";
+    grid-template-columns: 15vw 40vw 15vw;
+    align-items: center;
+    text-align: center;
+
+    h2 {
+        grid-area: linksboven;
+    }
+
+    .sluiten {
+        grid-area: rechtsboven;
+    }
+
+    p {
+        grid-area: midden;
+    }
+
+    .volgendestap {
+        grid-area: rechtsmidden;
+    }
+
+    .volgorde {
+        grid-area: middenonder;
+    }
+
+    ol {
+        display: flex;
+        justify-content: center;
+        gap: 2em;
+    }    
+
+    img {
+        max-width: 4em;
+    }
+
+    span {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &[open] {
+        display: grid;
+    }
+}
+
+/* Einde stappenplan pop up */
 
   @media (max-width: 630px) {
     header ul {

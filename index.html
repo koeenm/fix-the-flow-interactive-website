@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buurtcampus</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+   
 </head>
 <body>
     <header>
-        <button class="hulpknop">
+        <button id="hulpknop" class="hulpknop">
             <img src="svgs/icons8-question-mark-96.png" alt="hulpknop icoon">
             <figcaption>Hulp</figcaption>
         </button>
@@ -28,9 +28,19 @@
     </header>
 
     <main>
-        <section class="stappenplan">
-            
-        </section>
+        <dialog id="stappenplan" class="stappenplan">
+            <h2>Stap 1</h2>
+            <button id="close" class="sluiten"> <img src="svgs/close-x-svgrepo-com.svg" alt="close button"> <span>Sluiten</span> </button>
+            <p>Kies een initiatief uit het overzicht</p>
+            <button class="volgendestap"> <img src="svgs/right-arrow-svgrepo-com.svg" alt="right arrow"> <span>Volgende stap</span> </button>
+            <nav class="volgorde">
+              <ol>
+                <li></li>
+                <li></li>
+                <li></li>
+              </ol>
+            </nav>
+        </dialog>
 
         <section class="front-content">
                 <img src="pictures/amsterdam west map.png" alt="foto van de google maps kaart van amsterdam west">
@@ -55,5 +65,6 @@
     <footer>
 
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>
