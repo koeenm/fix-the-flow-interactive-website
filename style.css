@@ -8,11 +8,11 @@
     --primary-color: #46aa64;
     --secondary-color: #0a3250;
     --tertiaire-color: #ffffff;
-    --main-font: "AvantGardeGothicMedium", arial, sans-serif;
+    --main-font: "AvantGardeGothicMedium", arial, Helvetica, sans-serif;
   }
   
   @font-face {
-    font-family: "AvantGardeGothicMedium";
+    font-family: "AvantGardeGothicMedium", Arial, Helvetica, sans-serif;
     src: url(./Fonts/ITC\ Avant\ Garde\ Gothic\ Medium.otf);
   }
 
