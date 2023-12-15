@@ -119,17 +119,22 @@
 /* Begin stappenplan pop up */
 ::backdrop {
     background-color: black;
-    opacity: 0.5;
+    opacity: 0.75;
+}
+
+dialog {
+    border: none;
+    box-shadow: 0 0 0.6rem .15rem rgba(95, 95, 95, 0.237);
+    border-radius: 1em;
 }
   
 .step-guide {
     margin: 25vh auto;
     width: 75vw;
     height: 60vh;
-    border: 0.15em solid black;
 
-    opacity: 1;
-    transition-duration: 0.3s;
+    /* opacity: 1;
+    transition-duration: 0.3s; */
 
     grid-template-areas: 
     "linksboven . rechtsboven"
@@ -359,6 +364,7 @@
         }
     }
   }
+}
 
   .marketplace {
     display: flex;
