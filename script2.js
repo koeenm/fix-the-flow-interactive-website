@@ -1,4 +1,4 @@
-// stap 1: link de variabelen met de html of cssz
+// stap 1: link de variabelen met de html of css
 const helpBtn = document.querySelector('#help-button');
 const closeBtns = document.querySelectorAll('.close');
 const nextBtns = document.querySelectorAll('.next');
