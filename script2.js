@@ -23,7 +23,7 @@ closeBtns.forEach((closeBtn, index) => {
 nextBtns.forEach((btn, index) => {
     // Voeg een eventListener toe
     btn.addEventListener('click', function () { 
-        stepGuide[2].close(); // Sluit openstaande dialog
+        stepGuide[index].close(); // Sluit openstaande dialog
         // Index, zodat bij alle dialogs dezelfde waarde geldt.
         // Als je [1] gebruikt, zal bij elke dialog het backdrop effect vergroten
         // En dan zal de sluitknop naar de vorige dialog gaan.
