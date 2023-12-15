@@ -1,7 +1,9 @@
 // stap 1: link de variabelen met de html of css
 let helpBtn = document.querySelector('#help-button');
+console.log(helpBtn)
 let closeBtns = document.querySelectorAll('.close');
 let nextBtns = document.querySelectorAll('.next');
+console.log(nextBtns)
 let stepGuide = document.querySelectorAll('.step-guide');
 
 // stap 2: voeg een eventlistener toe
@@ -21,6 +23,8 @@ closeBtns.forEach((closeBtn, index) => {
 });
 
 nextBtns.forEach((btn, index) => {
+    // forEach zorgt voor een loop, hij zorgt dat alle, in dit geval,
+    // nextBtns kunnen worden gebruikt
     // Voeg een eventListener toe
     btn.addEventListener('click', function () { 
         stepGuide[index].close(); // Sluit openstaande dialog
