@@ -153,6 +153,11 @@ dialog {
 
     .close {
         grid-area: rechtsboven;
+        transition-duration: 0.3s;
+    }
+
+    .close:hover {
+        scale: 1.1;
     }
 
     p {
@@ -161,6 +166,11 @@ dialog {
 
     .next {
         grid-area: rechtsmidden;
+        transition-duration: 0.3s;
+    }
+
+    .next:hover {
+        scale: 1.1;
     }
 
     .numbered-nav {
