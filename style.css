@@ -6,9 +6,13 @@
 
 :root {
     --primary-color: #46aa64;
+    --primary-color-lighter: #3dd36a7a;
     --secondary-color: #0a3250;
     --tertiaire-color: #ffffff;
     --main-font: "AvantGardeGothicMedium", arial, Helvetica, sans-serif;
+    --box-shadow1: 0 0 0.6rem .15rem rgba(95, 95, 95, 0.237);
+    --initiative-card-padding: 3em 0 3em 1em;
+
   }
   
   @font-face {
@@ -47,35 +51,6 @@
 
     & .help-button img {
         max-width: 5vw;
-    }
-
-    & .help-button {
-        color: var(--tertiaire-color);
-    }
-
-    & .help-button figcaption {
-        text-align: center;
-        font-size: 0.5em;
-    }
-
-    & .help-button:hover {
-        color: var(--primary-color);
-        cursor: pointer;
-    }
-
-    & .help-button::after {
-        content: "";
-        width: 0%;
-        height: 2px;
-        background: var(--primary-color);
-        border-radius: 5em;
-        display: block;
-        margin: auto;
-        transition: 200ms;
-    }
-
-    & .help-button:hover::after {
-        width: 100%;
     }
 
     & h1 {
@@ -126,6 +101,30 @@ dialog {
     border: none;
     box-shadow: 0 0 0.6rem .15rem rgba(95, 95, 95, 0.237);
     border-radius: 1em;
+}
+
+.help-button {
+    display: flex;
+    justify-content: center;
+    font-family: var(--main-font);
+    background-color: var(--primary-color-lighter);
+    border-radius: .6em;
+    box-shadow: var(--box-shadow1);
+    line-height: 1.6;
+    margin: 1em auto;
+
+    & p {
+        font-family: var(--main-font);
+        font-size: 0.6em;
+        padding: 0.75em 1em;
+    }
+
+    :hover {
+        border-radius: 1em;
+        transition-property: box-shadow;
+        transition-duration: 0.3s;
+        box-shadow: 0 0 0.6rem .45rem rgba(95, 95, 95, 0.237);;
+    }
 }
   
 .step-guide {
@@ -206,6 +205,30 @@ dialog {
 }
 
 /* Einde stappenplan pop up */
+
+/* Initiatieven overzicht */
+
+.initiative-overview {
+
+    & ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2em;
+    }
+
+    li {
+        width: 90vw;
+        display: flex;
+        justify-content: start;
+        padding: var(--initiative-card-padding);
+        background-color: rgb(217, 235, 250);
+        border-radius: 1em;
+    }
+}
+
+/* Einde initiatieven overzicht */
 
   @media (max-width: 630px) {
     header ul {
