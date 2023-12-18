@@ -1,7 +1,5 @@
 * {
     box-sizing: border-box;
-    padding: 0;
-    margin: 0;
 }
 
 :root {
@@ -12,70 +10,47 @@
     --main-font: "AvantGardeGothicMedium", arial, Helvetica, sans-serif;
     --box-shadow1: 0 0 0.6rem .15rem rgba(95, 95, 95, 0.237);
     --initiative-card-padding: 3em 0 3em 1em;
-
-  }
-  
-  @font-face {
-    font-family: "AvantGardeGothicMedium", Arial, Helvetica, sans-serif;
-    src: url(./Fonts/ITC\ Avant\ Garde\ Gothic\ Medium.otf);
   }
 
-  body {
+body {
     font-family: var(--main-font);
-  }
+    margin: 0;
+}
 
-  ul, ol {
-    list-style: none;
-  }
-
-  a {
-    all: unset;
-  }
-
-  button {
-    background: transparent;
-    border: none;
-  }
-
-  button:hover {
-    cursor: pointer;
-  }
-
-  header {
-        display: flex;
-        background: var(--secondary-color);
-        color: var(--tertiaire-color);
-        justify-content: space-between;
-        align-items: center;
-        padding: 0.5em 1em;
-
-    & .help-button img {
-        max-width: 5vw;
-    }
+header {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--secondary-color);
+    align-items: center;
 
     & h1 {
+        color: var(--tertiaire-color);
+        padding: 0 1em;
         text-transform: uppercase;
     }
-    
-    & h1 span {
-        color: var(--primary-color);
-    }
 
-    & .hamburger-menu img {
-        max-width: 10vw;
+    span {
+        color: var(--primary-color);
     }
 
     ul {
         display: flex;
-        gap: 2em;
+        list-style: none;
+        gap: 1em;
+        padding: 0 1em;
     }
 
-    ul li a:hover {
+    a {
+        all: unset;
+        color: var(--tertiaire-color);
+    }
+
+    a:hover {
         color: var(--primary-color);
         cursor: pointer;
     }
 
-    & ul li a::after {
+    a::after {
         content: "";
         width: 0%;
         height: 2px;
@@ -86,329 +61,133 @@
         transition: 200ms;
     }
 
-    & ul li a:hover::after {
+    a:hover::after {
         width: 100%;
-      }
-  }
+    }
 
-/* Begin stappenplan pop up */
-::backdrop {
-    background-color: black;
-    opacity: 0.75;
-}
+    button {
+        display: none;
+        border: none;
+        background-color: transparent;
+    }
 
-dialog {
-    border: none;
-    box-shadow: 0 0 0.6rem .15rem rgba(95, 95, 95, 0.237);
-    border-radius: 1em;
+    button img {
+        width: 3em;
+    }
 }
 
 .help-button {
-    display: flex;
-    justify-content: center;
-    font-family: var(--main-font);
-    background-color: var(--primary-color-lighter);
-    border-radius: .6em;
-    box-shadow: var(--box-shadow1);
-    line-height: 1.6;
-    margin: 1em auto;
-
-    & p {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         font-family: var(--main-font);
-        font-size: 0.6em;
-        padding: 0.75em 1em;
-    }
+        background-color: var(--primary-color-lighter);
+        border-radius: .6em;
+        border: none;
+        box-shadow: var(--box-shadow1);
+        line-height: 1.6;
+        margin: 1em auto;
 
-    :hover {
-        border-radius: 1em;
-        transition-property: box-shadow;
-        transition-duration: 0.3s;
-        box-shadow: 0 0 0.6rem .45rem rgba(95, 95, 95, 0.237);;
-    }
+        & :hover {
+            cursor: pointer;
+        }
+
+        span {
+            font-weight: 600;
+        }
 }
-  
-.step-guide {
-    margin: 25vh auto;
-    width: 75vw;
-    height: 60vh;
 
-    /* opacity: 1;
-    transition-duration: 0.3s; */
+/* Stappenplan styling */
 
-    grid-template-areas: 
-    "linksboven . rechtsboven"
-    ". midden rechtsmidden"
-    ". middenonder.";
-    grid-template-columns: 10vw 55vw 10vw;
-    grid-template-rows: 10vh 40vh 10vh;
-    align-items: center;
-    text-align: center;
+::backdrop {
+    backdrop-filter: blur(0.5em);
+}
 
-    overflow: hidden;
-
-    h2 {
-        grid-area: linksboven;
+dialog {
+    height: 20em;
+    width: 20em;
+    border: none;
+    border-radius: 1em;
+    
+    & h2 {
+        position: absolute;
+        top: 0;
+        padding: 0;
     }
 
-    .close {
-        grid-area: rechtsboven;
-        transition-duration: 0.3s;
+    button.next-step {
+        position: absolute;
+        bottom: 1em;
+        right: 1em;
+        background-color: black;
+        color: var(--tertiaire-color);
+        border: none;
+        padding: 0.5em 1em;
+        border-radius: 1em;
     }
 
-    .close:hover {
-        scale: 1.1;
+    button.next-step:hover {
+        cursor: pointer;
     }
 
     p {
-        grid-area: midden;
+        position: absolute;
+        top: 5em;
+        padding: 0;
+        color: rgb(65, 65, 65);
     }
 
-    .next {
-        grid-area: rechtsmidden;
-        transition-duration: 0.3s;
+    button.close-button {
+        border: none;
+        background: transparent;
+        scale: 2;
+        position: absolute;
+        right: 1em;
     }
 
-    .next:hover {
-        scale: 1.1;
-    }
-
-    .numbered-nav {
-        grid-area: middenonder;
-    }
-
-    ol {
-        display: flex;
-        justify-content: center;
-        align-items: end;
-        gap: 2em;
-    }    
-
-    img {
-        max-width: 4em;
-    }
-
-    span {
-        display: flex;
-        flex-direction: column;
-    }
-
-    &[open] {
-        display: grid;
-    }
-
-    .current-step {
-        font-size: 1.25em;
-        width: 1.25em;
-        background-color: var(--primary-color);
-        border-radius: 50%;
+    button.close-button {
+        cursor: pointer;
     }
 }
 
-/* Einde stappenplan pop up */
+/* Einde stappenplan styling */
 
 /* Initiatieven overzicht */
 
 .initiative-overview {
+    margin: 0 auto;
+    width: 90%;
 
     & ul {
-        list-style: none;
         display: flex;
         flex-direction: column;
-        align-items: center;
+        list-style: none;
+        margin: 0;
+        padding: 0;
         gap: 2em;
     }
 
     li {
-        width: 90vw;
-        display: flex;
-        justify-content: start;
-        padding: var(--initiative-card-padding);
         background-color: rgb(217, 235, 250);
-        border-radius: 1em;
+        padding: 2em;
+        border-radius: 0.5em;
     }
 }
 
 /* Einde initiatieven overzicht */
 
-  @media (max-width: 630px) {
+@media (max-width: 630px) {
+    .hamburger-menu {
+        display: flex;
+    }
+
     header ul {
         display: none;
     }
-
-    h1 {
-        font-size: 2em;
-    }
-
-    .help-button {
-        scale: 1.2;
-    }
-
-    .front-content {
-        min-height: 50vh;
-    }
-
-    .front-content img {
-        display: none;
-    }
-
-    .front-content blockquote {
-        text-align: center;
-        font-size: 1.2em;
-    }
-
-    .step-guide {
-        height: 40vh;
-        grid-template-columns: 10vw 50vw 15vw ;
-        grid-template-rows: 10vh 20vh 10vh;
-        
-        & img {
-            max-width: 2em;
-        }
-
-        h2 {
-            padding-left: 1em;
-        }
-
-        button {
-            padding-left: 0;
-        }
-
-        p {
-            font-size: 1.25em;
-        }
-
-        span {
-            font-size: 0.75em;
-        }
-
-        .numbered-nav {
-            font-size: 0.75em;
-        }
-    }
 }
 
-  @media (min-width: 630px) {
+@media (min-width: 1200px) {
     .help-button {
-        font-size: 2em;
+        width: 30em;
     }
-
-    header {
-        padding: 1em 2em;
-    }
-
-    header .hamburger-menu {
-        display: none;
-    }
-
-    .step-guide {
-        
-        & h2 {
-            font-size: 2em;
-        }
-
-        p {
-            font-size: 1.5em;
-        }
-    }
-  }
-
-  main {
-
-    & .front-content {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 1em;
-        gap: 1em;
-    }
-
-    & .front-content img {
-        max-width: 50vw;
-        border-radius: 2em;
-    }
-
-    blockquote {
-        display: flex;
-        padding: 1em;
-    }
-
-    blockquote h2 {
-        font-size: 3em;
-        color: var(--primary-color);
-        min-width: 40vw;
-    }
-
-    blockquote h2 span {
-        color: black;
-    }
-  }  
-
-  @media (min-width: 800px) {
-    main blockquote h2 {
-        font-size: 4em;
-    }
-
-    h1 {
-        font-size: 2.5em;
-    }
-
-    .step-guide p {
-        font-size: 1.75em;
-    }
-  }
-
-  @media (max-width: 1200px) {
-    .step-guide {
-        height: 50vh;
-        grid-template-columns: 10vw 50vw 15vw ;
-        grid-template-rows: 12.5vh 25vh 12.5vh;
-  }
-
-  @media (min-width: 1200px) {
-    .help-button img {
-        width: 3vw;
-    }
-
-    h1 {
-        font-size: 3.5em;
-    }
-
-    .front-content img {
-        width: 35vw;
-    }
-
-    main blockquote h2 {
-        font-size: 5em;
-    }
-
-    .step-guide {
-
-        & h2 {
-            font-size: 4em;
-            padding-top: 1.2em;
-        }
-
-        p {
-            font-size: 2em;
-        }
-
-        button {
-            padding-left: 4em;
-        }
-    }
-  }
 }
-
-  .marketplace {
-    display: flex;
-    justify-content: space-evenly;
-    padding: 1em;
-    box-shadow: 0 -0.2rem 0.4rem -0.1rem rgba(140, 161, 174, 0.5);  
-  }
-
-
-
-
-
-
-  

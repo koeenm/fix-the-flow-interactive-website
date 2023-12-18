@@ -4,13 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buurtcampus</title>
-    <link rel="stylesheet" href="style.css">
-    
+    <link rel="stylesheet" href="style.css">  
 </head>
-
 <body>
     <header>
-     
         <h1>Buurt<span>campus</span></h1>
 
         <ul>
@@ -20,110 +17,67 @@
         </ul>
         
         <button class="hamburger-menu">
-            <img src="svgs/icons8-hamburger-100.png" alt="hamburger menu icoon">
+          <img src="svgs/icons8-hamburger-100.png" alt="hamburger-menu-icon">
         </button>
     </header>
+
     <main>
-        <button id="help-button" class="help-button">
+        <button class="help-button">
             <p>Hoe sluit ik mij aan bij een initiatief?<br>
-            Klik hier!</p>
+                <span>Klik hier!</span></p>
         </button>
-      <section class="dialogs">
-        <dialog id="step1" class="step-guide">
-            <h2>Stap 1</h2>
-            <button id="close" class="close"> <img src="svgs/close-x-svgrepo-com.svg" alt="close button"> <span>Sluiten</span> </button>
-            <p>Kies een initiatief uit het overzicht</p>
-            <button id="next" class="next"> <img src="svgs/right-arrow-svgrepo-com.svg" alt="right arrow"> <span>Volgende stap</span> </button>
-            <nav class="numbered-nav">
-              <ol>
-                <li class="current-step">1</li>
-                <li>2</li>
-                <li>3</li>
-                <li>4</li>
-                <li>5</li>
-              </ol>
-            </nav>
-        </dialog>
 
-        <dialog id="step2" class="step-guide">
-            <h2>Stap 2</h2>
-            <button id="close" class="close"> <img src="svgs/close-x-svgrepo-com.svg" alt="close button"> <span>Sluiten</span> </button>
-            <p>Klik op de link onderaan</p>
-            <button id="next2" class="next"> <img src="svgs/right-arrow-svgrepo-com.svg" alt="right arrow"> <span>Volgende stap</span> </button>
-            <nav class="numbered-nav">
-              <ol>
-                <li>1</li>
-                <li class="current-step">2</li>
-                <li>3</li>
-                <li>4</li>
-                <li>5</li>
-              </ol>
-            </nav>
-        </dialog>
+        <section class="dialogs">
+            <dialog class="step-guide">
+                <h2>Stap 1</h2>
+                <button class="close-button">&times;</button>
+                <p>Kies een initiatief uit het overzicht</p>
+                <button class="next-step">Volgende stap</button>
+            </dialog>
 
-        <dialog id="step3" class="step-guide">
-            <h2>Stap 3</h2>
-            <button id="close" class="close"> <img src="svgs/close-x-svgrepo-com.svg" alt="close button"> <span>Sluiten</span> </button>
-            <p>Vul je gegevens in</p>
-            <button id="next" class="next"> <img src="svgs/right-arrow-svgrepo-com.svg" alt="right arrow"> <span>Volgende stap</span> </button>
-            <nav class="numbered-nav">
-              <ol>
-                <li>1</li>
-                <li>2</li>
-                <li class="current-step">3</li>
-                <li>4</li>
-                <li>5</li>
-              </ol>
-            </nav>
-        </dialog>
+            <dialog class="step-guide">
+                <h2>Stap 2</h2>
+                <button class="close-button">&times;</button>
+                <p>Klik op de link onderaan</p>
+                <button class="next-step">Volgende stap</button>
+            </dialog>
 
-        <dialog id="step4" class="step-guide">
-            <h2>Stap 4</h2>
-            <button id="close" class="close"> <img src="svgs/close-x-svgrepo-com.svg" alt="close button"> <span>Sluiten</span> </button>
-            <p>Meld je aan</p>
-            <button id="next" class="next"> <img src="svgs/right-arrow-svgrepo-com.svg" alt="right arrow"> <span>Volgende stap</span> </button>
-            <nav class="numbered-nav">
-              <ol>
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-                <li class="current-step">4</li>
-                <li>5</li>
-              </ol>
-            </nav>
-        </dialog>
+            <dialog class="step-guide">
+                <h2>Stap 3</h2>
+                <button class="close-button">&times;</button>
+                <p>Vul je gegevens in</p>
+                <button class="next-step">Volgende stap</button>
+            </dialog>
 
-        <dialog id="step5" class="step-guide">
-            <h2>Stap 5</h2>
-            <button id="close" class="close"> <img src="svgs/close-x-svgrepo-com.svg" alt="close button"> <span>Sluiten</span> </button>
-            <p>Je hebt je aangemeld!</p>
-            <button id="next" class="next"> <img src="svgs/right-arrow-svgrepo-com.svg" alt="right arrow"> <span>Volgende stap</span> </button>
-            <nav class="numbered-nav">
-              <ol>
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-                <li>4</li>
-                <li class="current-step">5</li>
-              </ol>
-            </nav>
-        </dialog>
-      </section>
+            <dialog class="step-guide">
+                <h2>Stap 4</h2>
+                <button class="close-button">&times;</button>
+                <p>Meld je aan</p>
+                <button class="next-step">Volgende stap</button>
+            </dialog>
 
-      <section class="initiative-overview">
-        <ul>
-          <li>4 comité oud-west</li>
-          <li>ABC Amsterdams Buurvrouwen Contact</li>
-          <li>Actief Computer Centrum West</li>
-          <li>Aknarij</li>
-          <li>ASV Bilderdijkpark</li>
-        </ul>
-      </section>
+            <dialog class="step-guide">
+                <h2>Stap 5</h2>
+                <button class="close-button">&times;</button>
+                <p>Je hebt je aangemeld!</p>
+                <button class="next-step">Klaar</button>
+            </dialog>
+        </section>
+
+        <section class="initiative-overview">
+            <ul>
+              <li>4 comité oud-west</li>
+              <li>ABC Amsterdams Buurvrouwen Contact</li>
+              <li>Actief Computer Centrum West</li>
+              <li>Aknarij</li>
+              <li>ASV Bilderdijkpark</li>
+            </ul>
+          </section>
     </main>
 
     <footer>
 
     </footer>
-    <script src="script2.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

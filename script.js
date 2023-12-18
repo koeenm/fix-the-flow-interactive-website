@@ -1,22 +1,36 @@
-const helpBtn = document.querySelector('#help-button');
-const closeBtn = document.querySelector('#close');
+let helpBtn = document.querySelector('.help-button')
+console.log(helpBtn)
+let nextBtns = document.querySelectorAll('.next-step')
+let stepGuide = document.querySelectorAll('.step-guide')
+let closeBtns = document.querySelectorAll('.close-button')
+let dialog = document.querySelector('dialog')
 
-const nextBtn = document.querySelector('#next');
-// const backBtn = document.getElementById('back');
-
-const stepGuide = document.querySelector('#step-guide')
-const step1 = document.querySelector("#step1");
-// const step2 = document.getElementById("step2");
-// const step3 = document.getElementById("step3");
-
-
-helpBtn.addEventListener("click", function() {
-    step1.showModal();
+helpBtn.addEventListener('click', function() {
+    stepGuide[0].showModal();
 });
 
-closeBtn.addEventListener("click", function() {
-    step1.close();
+nextBtns.forEach((btn, index) => {
+    btn.addEventListener('click', function(){
+        stepGuide[index].close();
+
+        if (index + 1 < stepGuide.length) {
+            stepGuide[index + 1].showModal();
+        }
+    });
 });
 
+closeBtns.forEach((btn, index) => {
+    btn.addEventListener('click', function() {
+        stepGuide[index].close();
+    });
+});
+
+dialog.addEventListener("click", onClick)
+
+    function onClick(event) {
+        if (event.target === dialog) {
+            dialog.close();
+        };
+    };
 
 
