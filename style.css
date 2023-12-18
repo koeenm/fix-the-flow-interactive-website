@@ -190,4 +190,13 @@ dialog {
     .help-button {
         width: 30em;
     }
+
+    dialog {
+        height: 30em;
+        width: 30em;
+
+    & button {
+        scale: 1.1;
+    }
+    }
 }
