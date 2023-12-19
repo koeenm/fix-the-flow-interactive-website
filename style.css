@@ -76,6 +76,41 @@ header {
     }
 }
 
+/* begin homepagina */
+
+.front-content {
+    display: flex;
+    padding: 1.5em;
+
+    & iframe {
+        border-radius: 1em;
+    }
+
+    h2 {
+        font-size: 5em;
+    }
+
+    span {
+        color: var(--primary-color);
+    }
+}
+
+@media (max-width: 630px) {
+    iframe {
+        display: none;
+    }
+
+    .front-content h2 {
+        padding: 0;
+        margin: 0;
+        font-size: 3.5em;
+    }
+}
+
+/* einde homepagina */
+
+/* begin initiatieven.html */
+
 .help-button {
         display: flex;
         align-items: center;
@@ -200,3 +235,5 @@ dialog {
     }
     }
 }
+
+/* einde initiatieven.html */
